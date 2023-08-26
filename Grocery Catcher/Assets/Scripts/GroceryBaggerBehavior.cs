@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroceryBaggerBehavior : MonoBehaviour
 {
-    public float GroceryBaggerSpeed = 2.0f;
+    public float GroceryBaggerSpeed = 2.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,12 @@ public class GroceryBaggerBehavior : MonoBehaviour
     void Update()
     {
         transform.Translate(GroceryBaggerSpeed * Time.deltaTime, 0, 0);
-        if (transform.position.x >= 5.0f || transform.position.x <= -5.0f)
-            GroceryBaggerSpeed *= -1;
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D c)
+    {
+        if (c.gameObject.name == "Bounds")
+            GroceryBaggerSpeed *= -1;
     }
 }
