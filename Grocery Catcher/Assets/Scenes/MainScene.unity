@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 595, y: 308}
+  m_AnchoredPosition: {x: 421, y: 187}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &31477725
@@ -499,7 +499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 476, y: 308}
+  m_AnchoredPosition: {x: 292, y: 187}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1469864987
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 1714943114}
   - component: {fileID: 1714943115}
   m_Layer: 0
-  m_Name: Img_Basket
+  m_Name: Basket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,7 +639,7 @@ Transform:
   m_GameObject: {fileID: 1714943110}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.72, z: 0}
+  m_LocalPosition: {x: 0, y: -2.65, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -716,7 +716,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!1 &1903388842
 GameObject:
   m_ObjectHideFlags: 0
