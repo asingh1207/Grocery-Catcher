@@ -7,11 +7,15 @@ public class GroceryBaggerBehavior : MonoBehaviour
     public float GroceryBaggerSpeed = 2.5f;
 
     // Start is called before the first frame update
+
+    public GameObject bananaPrefab;
+
     void Start()
     {
-        
-    }
 
+       Invoke("Drop", 2.0f);
+    }
+        
     // Update is called once per frame
     void Update()
     {
@@ -19,9 +23,15 @@ public class GroceryBaggerBehavior : MonoBehaviour
         
     }
 
+    void Drop()
+    {
+        GameObject Banana = Instantiate<GameObject>(bananaPrefab);
+        Banana.transform.position = transform.position;
+        Invoke("Drop", 1.0f);
+    }
     private void OnCollisionEnter2D(Collision2D c)
     {
         if (c.gameObject.name == "Bounds")
-            GroceryBaggerSpeed *= -1;
+            GroceryBaggerSpeed *= -1;   
     }
 }
