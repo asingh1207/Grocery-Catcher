@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class BoundaryBehaviourScript : MonoBehaviour
 {
@@ -43,7 +43,7 @@ public class BoundaryBehaviourScript : MonoBehaviour
             }
             else
             {
-                EditorSceneManager.LoadScene("MainScene");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
     }
