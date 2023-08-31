@@ -510,6 +510,18 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: Good Pickup
+    clip: {fileID: 8300000, guid: a12eb3d307ef3f3468f3e9915cf723c7, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bad Pickup
+    clip: {fileID: 8300000, guid: 57f367197828bef4f9232d3b4e9601f4, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!4 &645560079
 Transform:
   m_ObjectHideFlags: 0
