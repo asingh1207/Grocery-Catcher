@@ -22,7 +22,8 @@ public class GroceryBaggerBehavior : MonoBehaviour
 
     public GameObject BananaPrefab;
     public GameObject ApplePrefab;
-    public int NumPrefabs = 2;
+    public GameObject KnifePrefab;
+    private int NumPrefabs = 3;
 
     void Start()
     {
@@ -66,19 +67,24 @@ public class GroceryBaggerBehavior : MonoBehaviour
     void Drop()
     {
         int ItemNum = RandomGenerator.Next(0, NumPrefabs);
-        
+
         if (ItemNum==0)
         {
             GameObject DroppedItem = Instantiate<GameObject>(ApplePrefab);
             DroppedItem.transform.position = transform.position;
         }
-        else
+        else if (ItemNum == 1)
+        {
+
+            GameObject DroppedItem = Instantiate<GameObject>(KnifePrefab);
+            DroppedItem.transform.position = transform.position;
+        }
+        else if (ItemNum == 2)
         {
             GameObject DroppedItem = Instantiate<GameObject>(BananaPrefab);
             DroppedItem.transform.position = transform.position;
         }
-        
-        
+
         RemainingItemsInWave--;
         DroppedItems++;
         if (RemainingItemsInWave%3 == 2 && RandomGenerator.Next(0, BaggerDirectionChangeRandomScale) == 0)

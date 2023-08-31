@@ -45,6 +45,16 @@ public class BasketBehavior : MonoBehaviour
             score += 100;
             GameObject.Find("Score").GetComponent<Text>().text = score.ToString();
         }
+        else if (collision.gameObject.tag == "Bad Item")
+        {
+            Destroy(collision.gameObject);
+            score -= 100;
+            if (score < 0)
+            {
+                score = 0;
+            }
+            GameObject.Find("Score").GetComponent<Text>().text = score.ToString();
+        }
     }
 }
         

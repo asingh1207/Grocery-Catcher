@@ -46,6 +46,9 @@ public class BoundaryBehaviourScript : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
+        else if (collision.gameObject.tag == "Bad Item")
+        {
+            Destroy(collision.gameObject);
+        }
     }
-
 }
