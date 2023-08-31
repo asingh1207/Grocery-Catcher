@@ -41,12 +41,14 @@ public class BasketBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Grocery")
         {
+            FindObjectOfType<AudioManager>().Play("Good Pickup");
             Destroy(collision.gameObject);
             score += 100;
             GameObject.Find("Score").GetComponent<Text>().text = score.ToString();
         }
         else if (collision.gameObject.tag == "Bad Item")
         {
+            FindObjectOfType<AudioManager>().Play("Bad Pickup");
             Destroy(collision.gameObject);
             score -= 100;
             if (score < 0)

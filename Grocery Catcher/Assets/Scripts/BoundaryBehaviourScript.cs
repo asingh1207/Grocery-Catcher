@@ -34,6 +34,7 @@ public class BoundaryBehaviourScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Grocery")
         {
+            FindObjectOfType<AudioManager>().Play("Monkey Pickup");
             Destroy(collision.gameObject);
             int ind = Baskets.Count - 1;
             if (ind > 0)

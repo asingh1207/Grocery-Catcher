@@ -506,7 +506,7 @@ MonoBehaviour:
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: 132bd54f6e5ff9d4385e03df8e95d52a, type: 3}
-    volume: 0.3
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -518,9 +518,15 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Bad Pickup
     clip: {fileID: 8300000, guid: 57f367197828bef4f9232d3b4e9601f4, type: 3}
-    volume: 0.3
+    volume: 0.4
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Monkey Pickup
+    clip: {fileID: 8300000, guid: 0852ce6e1dbcbbb408ca11d03dd58638, type: 3}
+    volume: 0.6
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &645560079
 Transform:
