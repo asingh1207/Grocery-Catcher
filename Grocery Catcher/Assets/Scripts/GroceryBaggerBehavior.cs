@@ -16,7 +16,8 @@ public class GroceryBaggerBehavior : MonoBehaviour
     private float PauseBetweenDropWaves = 3.0f;
     private int BaggerDirectionChangeRandomScale = 12;
     private System.Random RandomGenerator = new System.Random();
-
+    public bool InFrenzyMode = false;
+    public bool ExitingFrenzyMode = false;
 
     // Start is called before the first frame update
 
@@ -34,6 +35,8 @@ public class GroceryBaggerBehavior : MonoBehaviour
         Wave = 0;
         PauseBetweenDropWaves = 3.0f;
         Invoke("Drop", PauseBetweenDropWaves);
+        InFrenzyMode = false;
+        ExitingFrenzyMode = false;
     }
         
     // Update is called once per frame
@@ -54,11 +57,10 @@ public class GroceryBaggerBehavior : MonoBehaviour
         {
             transform.position += new Vector3(GroceryBaggerSpeed * Time.deltaTime, 0, 0);
         }
-        
 
         /*if (Time.deltaTime * GroceryBaggerSpeed>0.04f)
             Debug.Log(Time.deltaTime*GroceryBaggerSpeed);*/
-        
+
 
 
     }
@@ -66,6 +68,7 @@ public class GroceryBaggerBehavior : MonoBehaviour
     // Manages Dropping Items, Drop Waves, and random Bagger direction change
     void Drop()
     {
+        ExitingFrenzyMode = false;
         int ItemNum = RandomGenerator.Next(0, NumPrefabs);
 
         if (ItemNum==0)
@@ -93,14 +96,63 @@ public class GroceryBaggerBehavior : MonoBehaviour
         }
         if (RemainingItemsInWave == 0)
         {
-            NewWave();
-            Invoke("Drop", PauseBetweenDropWaves);
+            if (Wave == 0 && !InFrenzyMode) {
+                FrenzyMode();
+            }
+            else
+            {
+                InFrenzyMode = false;
+                NewWave();
+                Invoke("Drop", PauseBetweenDropWaves);
+            }
+            
         }
         else
         {
             Invoke("Drop", DropIntervalRate);
         }
         //Invoke("Drop", 1.0f);
+    }
+
+    private void FrenzyMode()
+    {
+        InFrenzyMode = true;
+        ExitingFrenzyMode = false;
+        FrenzyModeDrop();
+    }
+
+    private void FrenzyModeDrop()
+    {
+        if (InFrenzyMode)
+        {
+            int ItemNum = RandomGenerator.Next(0, NumPrefabs);
+
+            if (ItemNum == 0)
+            {
+                GameObject DroppedItem = Instantiate<GameObject>(ApplePrefab);
+                DroppedItem.transform.position = transform.position;
+            }
+            else if (ItemNum == 1)
+            {
+
+                GameObject DroppedItem = Instantiate<GameObject>(KnifePrefab);
+                DroppedItem.transform.position = transform.position;
+            }
+            else if (ItemNum == 2)
+            {
+                GameObject DroppedItem = Instantiate<GameObject>(BananaPrefab);
+                DroppedItem.transform.position = transform.position;
+            }
+
+            Invoke("FrenzyModeDrop", 0.1f);
+        }
+        else
+        {
+            ExitingFrenzyMode = true;
+            Invoke("Drop", 3.0f);
+        }
+
+        
     }
 
     private void NewWave()

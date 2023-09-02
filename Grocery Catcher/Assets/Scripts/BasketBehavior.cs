@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BasketBehavior : MonoBehaviour
 {
     public float BasketSpeed = 5.0f;
+    public GameObject GroceryBaggerBehavior;
 
     public int score = 0;
     // Start is called before the first frame update
@@ -20,6 +21,16 @@ public class BasketBehavior : MonoBehaviour
 
         
         Movment();
+    }
+
+    bool InFrenzyMode()
+    {
+        return GroceryBaggerBehavior.GetComponent<GroceryBaggerBehavior>().InFrenzyMode;
+    }
+
+    void LeaveFrenzyMode()
+    {
+        GroceryBaggerBehavior.GetComponent<GroceryBaggerBehavior>().InFrenzyMode = false;
     }
 
 
@@ -48,6 +59,10 @@ public class BasketBehavior : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Bad Item")
         {
+            if (InFrenzyMode())
+            {
+                LeaveFrenzyMode();
+            }
             FindObjectOfType<AudioManager>().Play("Bad Pickup");
             Destroy(collision.gameObject);
             score -= 100;

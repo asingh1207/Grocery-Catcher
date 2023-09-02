@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class BoundaryBehaviourScript : MonoBehaviour
 {
-
+    public GameObject GroceryBaggerBehavior;
     private List<GameObject> Baskets;
     private GameObject Basket;
+    private bool ExitingFrenzyMode;
     // Start is called before the first frame update
     void Start()
     {
         Basket = GameObject.Find("Basket");
         Baskets = new List<GameObject>();
+
 
         for (int i = 0; i < 3; i++)
         {
@@ -27,29 +29,49 @@ public class BoundaryBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ExitingFrenzyMode = GroceryBaggerBehavior.GetComponent<GroceryBaggerBehavior>().ExitingFrenzyMode;
     }
+
+    bool InFrenzyMode()
+    {
+        return GroceryBaggerBehavior.GetComponent<GroceryBaggerBehavior>().InFrenzyMode;
+    }
+
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Grocery")
-        {
-            FindObjectOfType<AudioManager>().Play("Monkey Pickup");
-            Destroy(collision.gameObject);
-            int ind = Baskets.Count - 1;
-            if (ind > 0)
-            {
-                Destroy(Baskets[ind]);
-                Baskets.RemoveAt(ind);
-            }
-            else
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-        }
-        else if (collision.gameObject.tag == "Bad Item")
+        if (InFrenzyMode())
         {
             Destroy(collision.gameObject);
         }
+        else
+        {
+            if (collision.gameObject.tag == "Grocery")
+            {
+                FindObjectOfType<AudioManager>().Play("Monkey Pickup");
+                Destroy(collision.gameObject);
+                if (!ExitingFrenzyMode)
+                {
+                    int ind = Baskets.Count - 1;
+                    if (ind > 0)
+                    {
+                        Destroy(Baskets[ind]);
+                        Baskets.RemoveAt(ind);
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    }
+                }
+                
+            }
+            else if (collision.gameObject.tag == "Bad Item")
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+        
     }
 }

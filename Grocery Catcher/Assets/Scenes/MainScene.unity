@@ -1109,6 +1109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BasketSpeed: 5
+  GroceryBaggerBehavior: {fileID: 2032801259}
   score: 0
 --- !u!212 &1714943112
 SpriteRenderer:
@@ -1378,6 +1379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fca888b61e0f24d8db0d70d6c109ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GroceryBaggerBehavior: {fileID: 2032801259}
 --- !u!1 &2032801259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023a17e5ce60f467eb825880f016128d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InFrenzyMode: 0
+  ExitingFrenzyMode: 0
   BananaPrefab: {fileID: 2278115712753634187, guid: 41381d6b7a5f446428a95c08d584bd7c, type: 3}
   ApplePrefab: {fileID: 2664590991035550285, guid: 06f48a5cad1164614a7dffaafc71a090, type: 3}
   KnifePrefab: {fileID: 2780067730532686807, guid: 9fba99d9449851a4caf67d7c7b362b9f, type: 3}
