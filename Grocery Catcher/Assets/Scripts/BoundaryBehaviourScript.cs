@@ -9,9 +9,14 @@ public class BoundaryBehaviourScript : MonoBehaviour
     private List<GameObject> Baskets;
     private GameObject Basket;
     private bool ExitingFrenzyMode;
+    public bool lose = false;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
+        
+        lose = false;
         Basket = GameObject.Find("Basket");
         Baskets = new List<GameObject>();
 
@@ -30,6 +35,9 @@ public class BoundaryBehaviourScript : MonoBehaviour
     void Update()
     {
         ExitingFrenzyMode = GroceryBaggerBehavior.GetComponent<GroceryBaggerBehavior>().ExitingFrenzyMode;
+
+        GameOver();
+
     }
 
     bool InFrenzyMode()
@@ -38,7 +46,15 @@ public class BoundaryBehaviourScript : MonoBehaviour
     }
 
 
+    public void GameOver()
+    {
+        if (lose)
+        {
 
+            SceneManager.LoadScene(2);
+
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -55,6 +71,7 @@ public class BoundaryBehaviourScript : MonoBehaviour
                 if (!ExitingFrenzyMode)
                 {
                     int ind = Baskets.Count - 1;
+                    
                     if (ind > 0)
                     {
                         Destroy(Baskets[ind]);
@@ -62,7 +79,8 @@ public class BoundaryBehaviourScript : MonoBehaviour
                     }
                     else
                     {
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                        lose = true;
+                        
                     }
                 }
                 

@@ -7,12 +7,12 @@ public class BasketBehavior : MonoBehaviour
 {
     public float BasketSpeed = 5.0f;
     public GameObject GroceryBaggerBehavior;
-
-    public int score = 0;
+    
+    public static int score = 0;
     // Start is called before the first frame update
     void Start()
     {
-     
+        score = 0;
     }
 
     // Update is called once per frame
@@ -50,28 +50,32 @@ public class BasketBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Grocery")
-        {
-            FindObjectOfType<AudioManager>().Play("Good Pickup");
-            Destroy(collision.gameObject);
-            score += 100;
-            GameObject.Find("Score").GetComponent<Text>().text = score.ToString();
-        }
-        else if (collision.gameObject.tag == "Bad Item")
-        {
-            if (InFrenzyMode())
+       
+        
+            if (collision.gameObject.tag == "Grocery")
             {
-                LeaveFrenzyMode();
+                FindObjectOfType<AudioManager>().Play("Good Pickup");
+                Destroy(collision.gameObject);
+                score += 100;
+                GameObject.Find("Score").GetComponent<Text>().text = score.ToString();
             }
-            FindObjectOfType<AudioManager>().Play("Bad Pickup");
-            Destroy(collision.gameObject);
-            score -= 100;
-            if (score < 0)
+            else if (collision.gameObject.tag == "Bad Item")
             {
-                score = 0;
+                if (InFrenzyMode())
+                {
+                    LeaveFrenzyMode();
+                }
+                FindObjectOfType<AudioManager>().Play("Bad Pickup");
+                Destroy(collision.gameObject);
+                score -= 100;
+                if (score < 0)
+                {
+                    score = 0;
+                }
+                GameObject.Find("Score").GetComponent<Text>().text = score.ToString();
             }
-            GameObject.Find("Score").GetComponent<Text>().text = score.ToString();
-        }
+        
     }
+        
 }
         
