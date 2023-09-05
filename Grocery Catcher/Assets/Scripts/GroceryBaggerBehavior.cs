@@ -42,8 +42,14 @@ public class GroceryBaggerBehavior : MonoBehaviour
         PauseBetweenDropWaves = 3.0f;
         StartStatement.SetActive(true);
         Invoke("Drop", PauseBetweenDropWaves);
+        Invoke("HideStartStatement", 2.5f);
         InFrenzyMode = false;
         ExitingFrenzyMode = false;
+    }
+
+    void HideStartStatement()
+    {
+        StartStatement.SetActive(false);
     }
         
     // Update is called once per frame
