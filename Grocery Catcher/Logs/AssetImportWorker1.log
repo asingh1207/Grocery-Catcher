@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.7f1\Editor\Unity.exe
 -name
 AssetImportWorker1
 -projectPath
-C:/Users/u1478396/Documents/GitHub/Grocery-Catcher/Grocery Catcher
+C:/Users/u1272571/Projects/Grocery-Catcher/Grocery Catcher
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-64487
-Successfully changed project path to: C:/Users/u1478396/Documents/GitHub/Grocery-Catcher/Grocery Catcher
-C:/Users/u1478396/Documents/GitHub/Grocery-Catcher/Grocery Catcher
+59201
+Successfully changed project path to: C:/Users/u1272571/Projects/Grocery-Catcher/Grocery Catcher
+C:/Users/u1272571/Projects/Grocery-Catcher/Grocery Catcher
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,15 +49,15 @@ C:/Users/u1478396/Documents/GitHub/Grocery-Catcher/Grocery Catcher
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [11208] Host "[IP] 155.98.167.219 [Port] 0 [Flags] 2 [Guid] 934107840 [EditorId] 934107840 [Version] 1048832 [Id] WindowsEditor(7,eae-z490-119) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [1416] Host "[IP] 155.98.167.205 [Port] 0 [Flags] 2 [Guid] 548337134 [EditorId] 548337134 [Version] 1048832 [Id] WindowsEditor(7,eae-z490-105) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [11208] Host "[IP] 155.98.167.219 [Port] 0 [Flags] 2 [Guid] 934107840 [EditorId] 934107840 [Version] 1048832 [Id] WindowsEditor(7,eae-z490-119) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [1416] Host "[IP] 155.98.167.205 [Port] 0 [Flags] 2 [Guid] 548337134 [EditorId] 548337134 [Version] 1048832 [Id] WindowsEditor(7,eae-z490-105) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 9.39 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 8.97 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.7f1 (b16b3b16c7a0)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/u1478396/Documents/GitHub/Grocery-Catcher/Grocery Catcher/Assets
+[Subsystems] Discovering subsystems at path C:/Users/u1272571/Projects/Grocery-Catcher/Grocery Catcher/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -69,18 +69,18 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56552
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008528 seconds.
-- Loaded All Assemblies, in  0.294 seconds
+Registered in 0.006737 seconds.
+- Loaded All Assemblies, in  0.291 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.211 seconds
-Domain Reload Profiling: 503ms
+- Finished resetting the current domain, in  0.212 seconds
+Domain Reload Profiling: 502ms
 	BeginReloadAssembly (86ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
@@ -89,26 +89,26 @@ Domain Reload Profiling: 503ms
 		CreateAndSetChildDomain (1ms)
 	RebuildCommonClasses (28ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (51ms)
+	initialDomainReloadingComplete (48ms)
 	LoadAllAssembliesAndSetupDomain (118ms)
-		LoadAssemblies (83ms)
+		LoadAssemblies (85ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (116ms)
-			TypeCache.Refresh (115ms)
+		AnalyzeDomain (117ms)
+			TypeCache.Refresh (116ms)
 				TypeCache.ScanAssembly (104ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (211ms)
+	FinalizeReload (212ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (162ms)
+		SetupLoadedEditorAssemblies (163ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (5ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
 			ProcessInitializeOnLoadAttributes (107ms)
-			ProcessInitializeOnLoadMethodAttributes (40ms)
+			ProcessInitializeOnLoadMethodAttributes (41ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -116,16 +116,16 @@ Domain Reload Profiling: 503ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\u1478396\Documents\GitHub\Grocery-Catcher\Grocery Catcher\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\u1478396\Documents\GitHub\Grocery-Catcher\Grocery Catcher\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.534 seconds
-Refreshing native plugins compatible for Editor in 4.31 ms, found 4 plugins.
+Symbol file LoadedFromMemory doesn't match image C:\Users\u1272571\Projects\Grocery-Catcher\Grocery Catcher\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\u1272571\Projects\Grocery-Catcher\Grocery Catcher\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.509 seconds
+Refreshing native plugins compatible for Editor in 3.23 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.468 seconds
-Domain Reload Profiling: 998ms
-	BeginReloadAssembly (123ms)
+- Finished resetting the current domain, in  0.465 seconds
+Domain Reload Profiling: 972ms
+	BeginReloadAssembly (119ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
@@ -133,37 +133,37 @@ Domain Reload Profiling: 998ms
 		CreateAndSetChildDomain (17ms)
 	RebuildCommonClasses (28ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (38ms)
-	LoadAllAssembliesAndSetupDomain (331ms)
-		LoadAssemblies (261ms)
+	initialDomainReloadingComplete (34ms)
+	LoadAllAssembliesAndSetupDomain (316ms)
+		LoadAssemblies (239ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (142ms)
-			TypeCache.Refresh (120ms)
-				TypeCache.ScanAssembly (106ms)
-			ScanForSourceGeneratedMonoScriptInfo (17ms)
+		AnalyzeDomain (145ms)
+			TypeCache.Refresh (121ms)
+				TypeCache.ScanAssembly (108ms)
+			ScanForSourceGeneratedMonoScriptInfo (18ms)
 			ResolveRequiredComponents (4ms)
-	FinalizeReload (469ms)
+	FinalizeReload (465ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (340ms)
+		SetupLoadedEditorAssemblies (332ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
+			InitializePlatformSupportModulesInManaged (6ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (66ms)
+			BeforeProcessingInitializeOnLoad (61ms)
 			ProcessInitializeOnLoadAttributes (228ms)
-			ProcessInitializeOnLoadMethodAttributes (28ms)
-			AfterProcessingInitializeOnLoad (7ms)
+			ProcessInitializeOnLoadMethodAttributes (29ms)
+			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 4.50 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 3.32 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4023 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 63 unused Assets / (60.5 KB). Loaded Objects now: 4487.
-Memory consumption went from 140.5 MB to 140.5 MB.
-Total: 3.044500 ms (FindLiveObjects: 0.273100 ms CreateObjectMapping: 0.276900 ms MarkObjects: 2.384600 ms  DeleteObjects: 0.109300 ms)
+Unloading 69 unused Assets / (245.3 KB). Loaded Objects now: 4480.
+Memory consumption went from 140.6 MB to 140.4 MB.
+Total: 2.949100 ms (FindLiveObjects: 0.267600 ms CreateObjectMapping: 0.273500 ms MarkObjects: 2.215900 ms  DeleteObjects: 0.191400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -180,62 +180,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1873137.998309 seconds.
-  path: Assets/Scripts/BoundaryBehaviourScript.cs
-  artifactKey: Guid(83fca888b61e0f24d8db0d70d6c109ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BoundaryBehaviourScript.cs using Guid(83fca888b61e0f24d8db0d70d6c109ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5b9dab319cd8dea5cc4d06634ddd861') in 0.002066 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 26.853477 seconds.
-  path: Assets/Images/Img_DONT DROP THE FRUIT.png
-  artifactKey: Guid(254be602a47180645bed3ddaeba06362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Img_DONT DROP THE FRUIT.png using Guid(254be602a47180645bed3ddaeba06362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfce98d9db1a2cdbe03dc59285469450') in 0.104357 seconds
+  Time since last request: 1859490.670277 seconds.
+  path: Assets/Images/Img_DONT DROP THE FRUIT 1.png
+  artifactKey: Guid(21bb45e374e0874478eb27c37cc5d0d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Img_DONT DROP THE FRUIT 1.png using Guid(21bb45e374e0874478eb27c37cc5d0d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1394600aea1586aedbb24b282e69ab83') in 0.076599 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Images/JungleBasket.png
-  artifactKey: Guid(6a986872676264aad9b1216bcbb1f2c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/JungleBasket.png using Guid(6a986872676264aad9b1216bcbb1f2c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c418604cfa81746e24524b5b86b9dbc3') in 0.042194 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Images/Img_orange.png
-  artifactKey: Guid(cfb0ff92119484b49a1778fcf08ee407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Img_orange.png using Guid(cfb0ff92119484b49a1778fcf08ee407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12e55a73037eb2a62b83f382554a0d87') in 0.028840 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 27.261563 seconds.
-  path: Assets/Prefabs/LifePrefab.prefab
-  artifactKey: Guid(fa218e6235c3c1b428932e00f988d5d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/LifePrefab.prefab using Guid(fa218e6235c3c1b428932e00f988d5d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e76d65f99905b7c69b9d0faeed73ca3b') in 0.042322 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 32.119602 seconds.
-  path: Assets/Images/frenzy/frenzy2.png
-  artifactKey: Guid(745005866dea97842b26fecd8187acaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/frenzy/frenzy2.png using Guid(745005866dea97842b26fecd8187acaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b54d0d04f96cc3d09b444ce38f1ed8d') in 0.044431 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Images/frenzy/frenzy5.png
-  artifactKey: Guid(9379a520d6e5a7347aaa8eb6b680de8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/frenzy/frenzy5.png using Guid(9379a520d6e5a7347aaa8eb6b680de8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65615070f91eca9a2db598bfd70a833d') in 0.021369 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0

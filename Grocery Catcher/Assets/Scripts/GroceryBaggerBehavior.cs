@@ -21,6 +21,7 @@ public class GroceryBaggerBehavior : MonoBehaviour
     private int RemainingFrenzyDrops = 0;
     public List<GameObject> FrenzyDroppedItems;
     public List<float> FrenzyDroppedItemsDeltaX;
+    private float StartStatementTransparency;
 
     // Start is called before the first frame update
 
@@ -41,14 +42,22 @@ public class GroceryBaggerBehavior : MonoBehaviour
         Wave = 0;
         PauseBetweenDropWaves = 3.0f;
         StartStatement.SetActive(true);
+        StartStatementTransparency = 1.0f;
         Invoke("Drop", PauseBetweenDropWaves);
+        Invoke("HideStartStatement", 2.5f);
         InFrenzyMode = false;
         ExitingFrenzyMode = false;
     }
         
+    void HideStartStatement()
+    {
+        StartStatement.SetActive(false);
+        Destroy(StartStatement);
+    }
     // Update is called once per frame
     void Update()
     {
+       
         float PotentialX = transform.position.x + GroceryBaggerSpeed * Time.deltaTime;
         if (PotentialX >= 7.2)
         {
@@ -86,6 +95,7 @@ public class GroceryBaggerBehavior : MonoBehaviour
     // Manages Dropping Items, Drop Waves, and random Bagger direction change
     void Drop()
     {
+        
         if (!ExitingFrenzyMode)
         {
             int ItemNum = RandomGenerator.Next(0, 3);
