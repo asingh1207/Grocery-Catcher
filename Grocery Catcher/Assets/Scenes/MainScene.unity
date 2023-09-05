@@ -1613,7 +1613,9 @@ MonoBehaviour:
   FrenzyDroppedItemsDeltaX: []
   BananaPrefab: {fileID: 2278115712753634187, guid: 41381d6b7a5f446428a95c08d584bd7c, type: 3}
   ApplePrefab: {fileID: 2664590991035550285, guid: 06f48a5cad1164614a7dffaafc71a090, type: 3}
-  KnifePrefab: {fileID: 2780067730532686807, guid: 9fba99d9449851a4caf67d7c7b362b9f, type: 3}
+  KnifePrefab: {fileID: 754366885935507994, guid: 9fba99d9449851a4caf67d7c7b362b9f, type: 3}
+  DookiePrefab: {fileID: 6554794745704953829, guid: f36ad015f768247abb58080afc641a24, type: 3}
+  BeansPrefab: {fileID: 1853590056903950145, guid: 255119ebd0b974a349454b7983dca9bc, type: 3}
 --- !u!212 &2032801261
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -27,7 +27,8 @@ public class GroceryBaggerBehavior : MonoBehaviour
     public GameObject BananaPrefab;
     public GameObject ApplePrefab;
     public GameObject KnifePrefab;
-    private int NumPrefabs = 3;
+    public GameObject DookiePrefab;
+    public GameObject BeansPrefab;
 
     void Start()
     {
@@ -84,22 +85,37 @@ public class GroceryBaggerBehavior : MonoBehaviour
     {
         if (!ExitingFrenzyMode)
         {
-            int ItemNum = RandomGenerator.Next(0, NumPrefabs);
-            
+            int ItemNum = RandomGenerator.Next(0, 3);
+            GameObject DroppedItem;
             if (ItemNum == 0)
             {
-                GameObject DroppedItem = Instantiate<GameObject>(ApplePrefab);
-                DroppedItem.transform.position = transform.position;
-            }
-            else if (ItemNum == 1)
-            {
+                ItemNum = RandomGenerator.Next(0, 2);
+                if (ItemNum == 0)
+                {
+                    DroppedItem = Instantiate<GameObject>(KnifePrefab);
+                }
+                else
+                {
+                    DroppedItem = Instantiate<GameObject>(DookiePrefab);
+                }
 
-                GameObject DroppedItem = Instantiate<GameObject>(KnifePrefab);
                 DroppedItem.transform.position = transform.position;
             }
-            else if (ItemNum == 2)
+            else
             {
-                GameObject DroppedItem = Instantiate<GameObject>(BananaPrefab);
+                ItemNum = RandomGenerator.Next(0, 3);
+                if (ItemNum == 0)
+                {
+                    DroppedItem = Instantiate<GameObject>(BananaPrefab);
+                }
+                else if (ItemNum == 1)
+                {
+                    DroppedItem = Instantiate<GameObject>(BeansPrefab);
+                }
+                else
+                {
+                    DroppedItem = Instantiate<GameObject>(ApplePrefab);
+                }
                 DroppedItem.transform.position = transform.position;
             }
             DroppedItems++;
@@ -137,7 +153,7 @@ public class GroceryBaggerBehavior : MonoBehaviour
 
     private void FrenzyMode()
     {
-        Debug.Log("Freny Mode Started");
+        // Debug.Log("Freny Mode Started");
         InFrenzyMode = true;
         ExitingFrenzyMode = false;
         RemainingFrenzyDrops = 50;
@@ -166,18 +182,33 @@ public class GroceryBaggerBehavior : MonoBehaviour
             GameObject DroppedItem;
             if (ItemNum == 0)
             {
-                DroppedItem = Instantiate<GameObject>(KnifePrefab);
-                DroppedItem.transform.position = transform.position;
-            }
-            else if (ItemNum <= 5)
-            {
-
-                DroppedItem = Instantiate<GameObject>(ApplePrefab);
+                ItemNum = RandomGenerator.Next(0, 2);
+                if (ItemNum==0)
+                {
+                    DroppedItem = Instantiate<GameObject>(KnifePrefab);
+                }
+                else
+                {
+                    DroppedItem = Instantiate<GameObject>(DookiePrefab);
+                }
+                
                 DroppedItem.transform.position = transform.position;
             }
             else
             {
-                DroppedItem = Instantiate<GameObject>(BananaPrefab);
+                ItemNum = RandomGenerator.Next(0, 3);
+                if (ItemNum == 0)
+                {
+                    DroppedItem = Instantiate<GameObject>(BananaPrefab);
+                }
+                else if (ItemNum == 1)
+                {
+                    DroppedItem = Instantiate<GameObject>(BeansPrefab);
+                }
+                else
+                {
+                    DroppedItem = Instantiate<GameObject>(ApplePrefab);
+                }
                 DroppedItem.transform.position = transform.position;
             }
 
@@ -190,7 +221,7 @@ public class GroceryBaggerBehavior : MonoBehaviour
         }
         else
         {
-            Debug.Log("Frenzy Mode Over");
+            // Debug.Log("Frenzy Mode Over");
             ExitingFrenzyMode = true;
             
             Invoke("Drop", 3.0f);
@@ -202,7 +233,7 @@ public class GroceryBaggerBehavior : MonoBehaviour
     private void NewWave()
     {
         Wave++;
-        Debug.Log("Wave: " + Wave);
+        // Debug.Log("Wave: " + Wave);
         WaveSize = 3 + Wave;
         RemainingItemsInWave = WaveSize;
         //Debug.Log("Items remaining (New Wave):" + RemainingItemsInWave);
