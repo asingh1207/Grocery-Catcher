@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BoundaryBehaviourScript : MonoBehaviour
 {
@@ -12,15 +13,20 @@ public class BoundaryBehaviourScript : MonoBehaviour
     public bool lose = false;
     public GameObject Life;
     public List<GameObject> Lives;
+    public GameObject Watchout;
+    public GameObject Yousuck;
+    
     
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        Watchout.SetActive(false);
+        Yousuck.SetActive(false);
         lose = false;
         Basket = GameObject.Find("Basket");
         Baskets = new List<GameObject>();
+
         
 
 
@@ -64,6 +70,16 @@ public class BoundaryBehaviourScript : MonoBehaviour
         }
     }
 
+    public void DisableWatchout()
+    {
+        Watchout.SetActive(false);
+    }
+
+    public void DisableYousuck()
+    {
+        Yousuck.SetActive(false);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (InFrenzyMode())
@@ -79,6 +95,20 @@ public class BoundaryBehaviourScript : MonoBehaviour
                 if (!ExitingFrenzyMode)
                 {
                     int ind = Baskets.Count - 1;
+
+                    if (ind == 2)
+                    {
+                        Watchout.SetActive(true);
+                        Invoke("DisableWatchout", 2.0f);
+                        
+
+                    }
+                    else if (ind == 1)
+                    {
+                        Watchout.SetActive(false);
+                        Yousuck.SetActive(true);
+                        Invoke("DisableYousuck", 2.0f);
+                    }
                     
                     if (ind > 0)
                     {
