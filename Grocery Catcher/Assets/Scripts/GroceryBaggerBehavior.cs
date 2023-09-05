@@ -24,6 +24,8 @@ public class GroceryBaggerBehavior : MonoBehaviour
 
     // Start is called before the first frame update
 
+    public GameObject StartStatement;
+
     public GameObject BananaPrefab;
     public GameObject ApplePrefab;
     public GameObject KnifePrefab;
@@ -38,6 +40,7 @@ public class GroceryBaggerBehavior : MonoBehaviour
         WaveSize = 3;
         Wave = 0;
         PauseBetweenDropWaves = 3.0f;
+        StartStatement.SetActive(true);
         Invoke("Drop", PauseBetweenDropWaves);
         InFrenzyMode = false;
         ExitingFrenzyMode = false;

@@ -34,7 +34,7 @@ public class BoundaryBehaviourScript : MonoBehaviour
         {
             GameObject L = Instantiate<GameObject>(Life);
             Vector3 Lpos = L.transform.position;
-            Lpos.x = Life.transform.position.x + 1.2f * i;
+            Lpos.x = Life.transform.position.x + 1f * i;
             L.transform.position = Lpos;
             Lives.Add(L);
             GameObject b = Instantiate<GameObject>(Basket);
