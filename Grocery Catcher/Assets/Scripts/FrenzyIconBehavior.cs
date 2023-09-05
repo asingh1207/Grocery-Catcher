@@ -26,7 +26,8 @@ public class FrenzyIconBehavior : MonoBehaviour
         {
             ScaleAddition = 0.25f - (val - 0.25f);
         }
-        FrenzyIcon.transform.localScale = new Vector3(1f+ScaleAddition, 0.2f+ ScaleAddition, 1f+ ScaleAddition);
+        ScaleAddition *= 2;
+        FrenzyIcon.transform.localScale = new Vector3(2f+ScaleAddition, 0.4f+ ScaleAddition, 2f+ ScaleAddition);
         FrenzyIcon.enabled = InFrenzyMode();
     }
 

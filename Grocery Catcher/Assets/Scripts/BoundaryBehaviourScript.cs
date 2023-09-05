@@ -10,6 +10,8 @@ public class BoundaryBehaviourScript : MonoBehaviour
     private GameObject Basket;
     private bool ExitingFrenzyMode;
     public bool lose = false;
+    public GameObject Life;
+    public List<GameObject> Lives;
     
     
     // Start is called before the first frame update
@@ -19,10 +21,16 @@ public class BoundaryBehaviourScript : MonoBehaviour
         lose = false;
         Basket = GameObject.Find("Basket");
         Baskets = new List<GameObject>();
+        
 
 
         for (int i = 0; i < 3; i++)
         {
+            GameObject L = Instantiate<GameObject>(Life);
+            Vector3 Lpos = L.transform.position;
+            Lpos.x = Life.transform.position.x + 1.2f * i;
+            L.transform.position = Lpos;
+            Lives.Add(L);
             GameObject b = Instantiate<GameObject>(Basket);
             Vector3 bpos = b.transform.position;
             bpos.y = Basket.transform.position.y - (0.4f * i);
@@ -75,7 +83,9 @@ public class BoundaryBehaviourScript : MonoBehaviour
                     if (ind > 0)
                     {
                         Destroy(Baskets[ind]);
+                        Destroy(Lives[ind]);
                         Baskets.RemoveAt(ind);
+                        Lives.RemoveAt(ind);
                     }
                     else
                     {
