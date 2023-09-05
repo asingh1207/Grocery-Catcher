@@ -25,7 +25,7 @@ public class GroceryBaggerBehavior : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject StartStatement;
-
+    public static AudioManager instance;
     public GameObject BananaPrefab;
     public GameObject ApplePrefab;
     public GameObject KnifePrefab;
@@ -163,6 +163,8 @@ public class GroceryBaggerBehavior : MonoBehaviour
     private void FrenzyMode()
     {
         // Debug.Log("Freny Mode Started");
+        FindObjectOfType<AudioManager>().StopPlaying("Theme");
+        FindObjectOfType<AudioManager>().Play("Frenzy Theme");
         InFrenzyMode = true;
         ExitingFrenzyMode = false;
         RemainingFrenzyDrops = 50;
@@ -186,6 +188,7 @@ public class GroceryBaggerBehavior : MonoBehaviour
     private void FrenzyModeDrop()
     {
         if (InFrenzyMode && RemainingFrenzyDrops>0)
+
         {
             int ItemNum = RandomGenerator.Next(0, 11);
             GameObject DroppedItem;
@@ -232,7 +235,9 @@ public class GroceryBaggerBehavior : MonoBehaviour
         {
             // Debug.Log("Frenzy Mode Over");
             ExitingFrenzyMode = true;
-            
+            FindObjectOfType<AudioManager>().StopPlaying("Frenzy Theme");
+            FindObjectOfType<AudioManager>().Play("Theme");
+
             Invoke("Drop", 3.0f);
         }
 
