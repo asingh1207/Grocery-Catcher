@@ -105,10 +105,10 @@ public class GroceryBaggerBehavior : MonoBehaviour
             DroppedItems++;
             RemainingItemsInWave--;
         }
-        
-        
-        Debug.Log("Items remaining: " + RemainingItemsInWave);
-        
+
+
+        // Debug.Log("Items remaining: " + RemainingItemsInWave);
+
         if (RemainingItemsInWave%3 == 2 && RandomGenerator.Next(0, BaggerDirectionChangeRandomScale) == 0)
         {
             FlipBaggerDirection();
@@ -205,7 +205,7 @@ public class GroceryBaggerBehavior : MonoBehaviour
         Debug.Log("Wave: " + Wave);
         WaveSize = 3 + Wave;
         RemainingItemsInWave = WaveSize;
-        Debug.Log("Items remaining (New Wave):" + RemainingItemsInWave);
+        //Debug.Log("Items remaining (New Wave):" + RemainingItemsInWave);
         if (Wave <= 10)
         {
             DropIntervalRate = 1.2f - ((float)Wave) / 10.0f;

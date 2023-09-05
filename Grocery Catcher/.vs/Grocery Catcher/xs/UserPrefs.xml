@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{776CA8E9-0556-06D8-254E-891AD3DBAF0F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GroceryBaggerBehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BoundaryBehaviourScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/GroceryBaggerBehavior.cs" Line="216" Column="50" />
-      <File FileName="Assets/Scripts/BoundaryBehaviourScript.cs" Line="46" Column="6" />
-      <File FileName="Assets/Scripts/WallBehavior.cs" Line="34" Column="1" />
+      <File FileName="Assets/Scripts/GroceryBaggerBehavior.cs" Line="125" Column="38" />
+      <File FileName="Assets/Scripts/BoundaryBehaviourScript.cs" Line="49" Column="27" />
+      <File FileName="Assets/Scripts/WallBehavior.cs" Line="36" Column="10" />
+      <File FileName="Assets/Scripts/FrenzyIconBehavior.cs" Line="10" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +12,7 @@
           <Node name="Grocery Catcher" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="GroceryBaggerBehavior.cs" selected="True" />
+                <Node name="BoundaryBehaviourScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>
