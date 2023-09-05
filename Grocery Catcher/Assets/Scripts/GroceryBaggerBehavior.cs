@@ -18,6 +18,9 @@ public class GroceryBaggerBehavior : MonoBehaviour
     private System.Random RandomGenerator = new System.Random();
     public bool InFrenzyMode = false;
     public bool ExitingFrenzyMode = false;
+    private int RemainingFrenzyDrops = 0;
+    public List<GameObject> FrenzyDroppedItems;
+    public List<float> FrenzyDroppedItemsDeltaX;
 
     // Start is called before the first frame update
 
@@ -61,72 +64,28 @@ public class GroceryBaggerBehavior : MonoBehaviour
         /*if (Time.deltaTime * GroceryBaggerSpeed>0.04f)
             Debug.Log(Time.deltaTime*GroceryBaggerSpeed);*/
 
+        /*if (InFrenzyMode)
+        {
+            for (int i=0; i<FrenzyDroppedItems.Count; i++)
+            {
+                if (FrenzyDroppedItems[i] != null && !GameObject.Equals(FrenzyDroppedItems[i], null))
+                {
+                    FrenzyDroppedItems[i].transform.position += new Vector3(FrenzyDroppedItemsDeltaX[i] * Time.deltaTime, 0, 0);
 
+                }
+            }
+        }*/
+        
 
     }
 
     // Manages Dropping Items, Drop Waves, and random Bagger direction change
     void Drop()
     {
-        ExitingFrenzyMode = false;
-        int ItemNum = RandomGenerator.Next(0, NumPrefabs);
-
-        if (ItemNum==0)
-        {
-            GameObject DroppedItem = Instantiate<GameObject>(ApplePrefab);
-            DroppedItem.transform.position = transform.position;
-        }
-        else if (ItemNum == 1)
-        {
-
-            GameObject DroppedItem = Instantiate<GameObject>(KnifePrefab);
-            DroppedItem.transform.position = transform.position;
-        }
-        else if (ItemNum == 2)
-        {
-            GameObject DroppedItem = Instantiate<GameObject>(BananaPrefab);
-            DroppedItem.transform.position = transform.position;
-        }
-
-        RemainingItemsInWave--;
-        DroppedItems++;
-        if (RemainingItemsInWave%3 == 2 && RandomGenerator.Next(0, BaggerDirectionChangeRandomScale) == 0)
-        {
-            FlipBaggerDirection();
-        }
-        if (RemainingItemsInWave == 0)
-        {
-            if (Wave == 0 && !InFrenzyMode) {
-                FrenzyMode();
-            }
-            else
-            {
-                InFrenzyMode = false;
-                NewWave();
-                Invoke("Drop", PauseBetweenDropWaves);
-            }
-            
-        }
-        else
-        {
-            Invoke("Drop", DropIntervalRate);
-        }
-        //Invoke("Drop", 1.0f);
-    }
-
-    private void FrenzyMode()
-    {
-        InFrenzyMode = true;
-        ExitingFrenzyMode = false;
-        FrenzyModeDrop();
-    }
-
-    private void FrenzyModeDrop()
-    {
-        if (InFrenzyMode)
+        if (!ExitingFrenzyMode)
         {
             int ItemNum = RandomGenerator.Next(0, NumPrefabs);
-
+            
             if (ItemNum == 0)
             {
                 GameObject DroppedItem = Instantiate<GameObject>(ApplePrefab);
@@ -143,12 +102,97 @@ public class GroceryBaggerBehavior : MonoBehaviour
                 GameObject DroppedItem = Instantiate<GameObject>(BananaPrefab);
                 DroppedItem.transform.position = transform.position;
             }
+            DroppedItems++;
+            RemainingItemsInWave--;
+        }
+        
+        
+        Debug.Log("Items remaining: " + RemainingItemsInWave);
+        
+        if (RemainingItemsInWave%3 == 2 && RandomGenerator.Next(0, BaggerDirectionChangeRandomScale) == 0)
+        {
+            FlipBaggerDirection();
+        }
+        if (RemainingItemsInWave == 0)
+        {
+            if (Wave%5 == 0 && !InFrenzyMode && !ExitingFrenzyMode && Wave>0) {
+                Invoke("FrenzyMode", PauseBetweenDropWaves);
+            }
+            else
+            {
+                DestroyFrenzyDroppedItems();
+                ExitingFrenzyMode = false;
+                InFrenzyMode = false;
+                NewWave();
+                Invoke("Drop", PauseBetweenDropWaves);
+            }
+            
+        }
+        else
+        {
+            Invoke("Drop", DropIntervalRate);
+        }
+        //Invoke("Drop", 1.0f);
+    }
 
+    private void FrenzyMode()
+    {
+        Debug.Log("Freny Mode Started");
+        InFrenzyMode = true;
+        ExitingFrenzyMode = false;
+        RemainingFrenzyDrops = 50;
+        FrenzyDroppedItems = new List<GameObject>();
+        FrenzyDroppedItemsDeltaX = new List<float>();
+        FrenzyModeDrop();
+        
+    }
+
+    private void DestroyFrenzyDroppedItems()
+    {
+        for (int i = 0; i < FrenzyDroppedItems.Count; i++)
+        {
+            if (FrenzyDroppedItems[i] != null && !GameObject.Equals(FrenzyDroppedItems[i], null))
+            {
+                Destroy(FrenzyDroppedItems[i]);
+            }
+        }
+    }
+
+    private void FrenzyModeDrop()
+    {
+        if (InFrenzyMode && RemainingFrenzyDrops>0)
+        {
+            int ItemNum = RandomGenerator.Next(0, 11);
+            GameObject DroppedItem;
+            if (ItemNum == 0)
+            {
+                DroppedItem = Instantiate<GameObject>(KnifePrefab);
+                DroppedItem.transform.position = transform.position;
+            }
+            else if (ItemNum <= 5)
+            {
+
+                DroppedItem = Instantiate<GameObject>(ApplePrefab);
+                DroppedItem.transform.position = transform.position;
+            }
+            else
+            {
+                DroppedItem = Instantiate<GameObject>(BananaPrefab);
+                DroppedItem.transform.position = transform.position;
+            }
+
+            RemainingFrenzyDrops--;
+            FrenzyDroppedItems.Add(DroppedItem);
+            FrenzyDroppedItemsDeltaX.Add(5.0f);
+            Rigidbody2D FrenzyItemRB = DroppedItem.GetComponent<Rigidbody2D>();
+            FrenzyItemRB.velocity = new Vector2((10f*(float)RandomGenerator.NextDouble() - 5f), FrenzyItemRB.velocity.y);
             Invoke("FrenzyModeDrop", 0.1f);
         }
         else
         {
+            Debug.Log("Frenzy Mode Over");
             ExitingFrenzyMode = true;
+            
             Invoke("Drop", 3.0f);
         }
 
@@ -158,8 +202,10 @@ public class GroceryBaggerBehavior : MonoBehaviour
     private void NewWave()
     {
         Wave++;
+        Debug.Log("Wave: " + Wave);
         WaveSize = 3 + Wave;
         RemainingItemsInWave = WaveSize;
+        Debug.Log("Items remaining (New Wave):" + RemainingItemsInWave);
         if (Wave <= 10)
         {
             DropIntervalRate = 1.2f - ((float)Wave) / 10.0f;
