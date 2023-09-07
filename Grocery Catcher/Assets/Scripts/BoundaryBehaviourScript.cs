@@ -38,6 +38,7 @@ public class BoundaryBehaviourScript : MonoBehaviour
             L.transform.position = Lpos;
             Lives.Add(L);
             GameObject b = Instantiate<GameObject>(Basket);
+            b.GetComponent<SpriteRenderer>().sortingOrder = i;
             Vector3 bpos = b.transform.position;
             bpos.y = Basket.transform.position.y - (0.4f * i);
             b.transform.position = bpos;
