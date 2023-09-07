@@ -220,9 +220,9 @@ RectTransform:
   - {fileID: 935937184}
   - {fileID: 1749503190}
   - {fileID: 610674589}
-  - {fileID: 1171670552}
   - {fileID: 1509067672}
   - {fileID: 1218036562}
+  - {fileID: 1171670552}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
