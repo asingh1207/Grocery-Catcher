@@ -46,6 +46,18 @@ public class BasketBehavior : MonoBehaviour
             transform.position += new Vector3(BasketSpeed * Time.deltaTime, 0, 0);
         }
 
+
+        if (Input.GetKey("left") && transform.position.x >= -7)
+        {
+            transform.position -= new Vector3(BasketSpeed * Time.deltaTime, 0, 0);
+
+        }
+        if (Input.GetKey("right") && transform.position.x <= 7)
+        {
+            transform.position += new Vector3(BasketSpeed * Time.deltaTime, 0, 0);
+        }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

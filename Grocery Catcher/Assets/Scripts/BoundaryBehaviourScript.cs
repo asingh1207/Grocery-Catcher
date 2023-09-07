@@ -50,7 +50,7 @@ public class BoundaryBehaviourScript : MonoBehaviour
     void Update()
 
     {
-        Screen.fullScreen = false;
+       // Screen.fullScreen = false;
         ExitingFrenzyMode = GroceryBaggerBehavior.GetComponent<GroceryBaggerBehavior>().ExitingFrenzyMode;
 
         GameOver();
