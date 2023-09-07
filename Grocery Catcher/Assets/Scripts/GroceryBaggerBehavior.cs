@@ -21,7 +21,8 @@ public class GroceryBaggerBehavior : MonoBehaviour
     private int RemainingFrenzyDrops = 0;
     public List<GameObject> FrenzyDroppedItems;
     public List<float> FrenzyDroppedItemsDeltaX;
-
+    public GameObject MonkeySprite;
+    public GameObject BrianSprite;
     // Start is called before the first frame update
 
     public GameObject StartStatement;
@@ -163,6 +164,8 @@ public class GroceryBaggerBehavior : MonoBehaviour
     private void FrenzyMode()
     {
         // Debug.Log("Freny Mode Started");
+        MonkeySprite.GetComponent<SpriteRenderer>().enabled = false;
+        BrianSprite.GetComponent<SpriteRenderer>().enabled = true;
         FindObjectOfType<AudioManager>().StopPlaying("Theme");
         FindObjectOfType<AudioManager>().Play("Frenzy Theme");
         InFrenzyMode = true;
@@ -237,7 +240,8 @@ public class GroceryBaggerBehavior : MonoBehaviour
             ExitingFrenzyMode = true;
             FindObjectOfType<AudioManager>().StopPlaying("Frenzy Theme");
             FindObjectOfType<AudioManager>().Play("Theme");
-
+            MonkeySprite.GetComponent<SpriteRenderer>().enabled = true;
+            BrianSprite.GetComponent<SpriteRenderer>().enabled = false;
             Invoke("Drop", 3.0f);
         }
 
