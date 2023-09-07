@@ -43,6 +43,15 @@ TagManager:
   - name: Background
     uniqueID: 622284739
     locked: 0
+  - name: Monkey
+    uniqueID: 49253009
+    locked: 0
+  - name: Dropped Items
+    uniqueID: 353237141
+    locked: 0
+  - name: Basket
+    uniqueID: 234922175
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
