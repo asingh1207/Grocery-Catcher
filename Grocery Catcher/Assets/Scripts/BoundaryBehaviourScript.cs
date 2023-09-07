@@ -48,7 +48,9 @@ public class BoundaryBehaviourScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
+        Screen.fullScreen = false;
         ExitingFrenzyMode = GroceryBaggerBehavior.GetComponent<GroceryBaggerBehavior>().ExitingFrenzyMode;
 
         GameOver();
